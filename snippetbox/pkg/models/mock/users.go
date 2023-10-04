@@ -24,6 +24,7 @@ func (m *UserModel) Insert(name, email, password string) error {
 		return nil
 	}
 }
+
 func (m *UserModel) Authenticate(email, password string) (int, error) {
 	switch email {
 	case "alice@example.com":
@@ -40,4 +41,7 @@ func (m *UserModel) Get(id int) (*models.User, error) {
 	default:
 		return nil, models.ErrNoRecord
 	}
+}
+func (m *UserModel) ChangePassword(int, string, string) error {
+	return nil
 }
